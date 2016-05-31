@@ -36,7 +36,6 @@ public class Bank {
 				customerList.add(customer);
 				}
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	return customerList;
@@ -58,7 +57,6 @@ public class Bank {
 				accountList.add(account);
 				}
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return accountList;
