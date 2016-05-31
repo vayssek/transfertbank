@@ -42,7 +42,25 @@ public class Bank {
 	return customerList;
 	}
 
-	public List<Account> getAccounts() {
+	public List<Account> getAccounts(String name) {
+		String url = "jdbc:postgresql://localhost:5432/transfertbank";
+		String user = "admin";
+		String passwd = "frct..035";
+		try {
+			Connection connection = DriverManager.getConnection(url, user, passwd);
+			Statement stmt = connection.createStatement();
+			String request = "SELECT account.number, account.balance FROM account, bank WHERE bank.name='"+name+"';";
+			ResultSet resultSet =stmt.executeQuery(request);
+			while (resultSet.next()) {
+				String number = resultSet.getString("number");
+				double balance  = resultSet.getDouble("balance");
+				Account account = new Account(number,balance);
+				accountList.add(account);
+				}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		return accountList;
 	}
 
