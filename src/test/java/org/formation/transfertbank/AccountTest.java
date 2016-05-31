@@ -29,4 +29,14 @@ public class AccountTest {
 		//THEN
 		assertEquals(true,result);
 	}
+	
+	@Test
+	public void checkFirstAccountBalanceFalseResult(){
+		//GIVEN
+		//WHEN
+		boolean result= firstAccount.checkBalance(firstAccount.getBalance(),400);
+		//THEN
+		assertEquals(false,result);
+	}
+	
 }
