@@ -32,16 +32,6 @@ public class BankTest {
 		assertEquals(2, result.size());
 	}
 	
-//	@Test
-//	public void returnListCustomersAdded(){
-//		//GIVEN
-//		bank.getCustomers().add(customer);
-//		//WHEN
-//		List<Customer> result = bank.getCustomers();
-//		//THEN
-//		assertFalse(result.isEmpty());
-//	}
-	
 	@Test
 	public void returnListAccounts(){
 		//GIVEN
