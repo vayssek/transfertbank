@@ -24,4 +24,12 @@ class Account {
 		this.balance = balance;
 	}
 	
+	public boolean checkBalance(double balance, double i){
+		if(balance>=i){
+			return true;
+		}else{
+			return false;
+		}		
+	}
+	
 }
