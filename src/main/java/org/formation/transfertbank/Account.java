@@ -31,5 +31,16 @@ class Account {
 			return false;
 		}		
 	}
+
+	public boolean isValid(Account account) {
+		boolean check = true;
+		if(account.getNumber().charAt(3)!='_'){
+			check=false;
+		}
+		if(account.getNumber().length()!=13){
+			check=false;
+		}
+		return check;
+	}
 	
 }
