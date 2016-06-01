@@ -46,14 +46,6 @@ public class AccountTest {
 		//THEN
 		assertEquals(false,result);
 	}
-	//false test
-	@Test
-	public void checkFFirstAccountBalance(){
-		//GIVEN
-		//WHEN
-		boolean result= firstAccount.checkBalance(firstAccount.getBalance(),300);
-		//THEN
-		assertEquals(false,result);
-	}	
+
 	
 }
