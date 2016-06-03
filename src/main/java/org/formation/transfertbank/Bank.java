@@ -21,11 +21,12 @@ public class Bank {
 	}
 	
 	public List<Customer> getCustomers(String name){
+		Connection connection = null;
 		String url = "jdbc:postgresql://localhost:5432/transfertbank";
 		String user = "admin";
 		String passwd = "frct..035";
 		try {
-			Connection connection = DriverManager.getConnection(url, user, passwd);
+			connection = DriverManager.getConnection(url, user, passwd);
 			Statement stmt = connection.createStatement();
 			String request = "SELECT customer.firstname, customer.lastname FROM customer, bank WHERE bank.name='"+name+"';";
 			ResultSet resultSet =stmt.executeQuery(request);
@@ -37,6 +38,8 @@ public class Bank {
 				}
 		} catch (SQLException e) {
 			e.printStackTrace();
+		} finally{
+			 try { connection.close(); } catch (Exception e) { /* ignored */ }
 		}
 	return customerList;
 	}
