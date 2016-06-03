@@ -24,6 +24,18 @@ public class AccountTest {
 	}
 	
 	@Test
+	public void checkSetNumber(){
+		//GIVEN
+		String number = "213_123456789";
+		//WHEN
+		firstAccount.setNumber(number);
+		String result=firstAccount.getNumber();
+		//THEN
+		assertEquals(result,"213_123456789");
+	}
+	
+	
+	@Test
 	public void checkSetBalance(){
 		//GIVEN
 		double balance=1000;
