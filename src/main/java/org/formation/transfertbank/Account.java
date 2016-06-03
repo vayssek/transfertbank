@@ -32,12 +32,12 @@ class Account {
 		}		
 	}
 
-	public boolean isValid(Account account) {
+	public boolean isValid() {
 		boolean check = true;
-		if(account.getNumber().charAt(3)!='_'){
+		if(this.getNumber().charAt(3)!='_'){
 			check=false;
 		}
-		if(account.getNumber().length()!=13){
+		if(this.getNumber().length()!=13){
 			check=false;
 		}
 		return check;
