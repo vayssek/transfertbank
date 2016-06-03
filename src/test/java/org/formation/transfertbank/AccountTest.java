@@ -23,6 +23,16 @@ public class AccountTest {
 		falseAccount = FALSE_ACCOUNT;
 	}
 	
+	@Test
+	public void checkSetBalance(){
+		//GIVEN
+		double balance=1000;
+		//WHEN
+		firstAccount.setBalance(balance);
+		double result=firstAccount.getBalance();
+		//THEN
+		assertEquals(result,1000,0.000001);
+	}	
 	
 	@Test
 	public void checkFirstAccountBalance(){
